@@ -1,0 +1,350 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Control.gd" type="Script" id=1]
+[ext_resource path="res://map.png" type="Texture" id=2]
+[ext_resource path="res://character.png" type="Texture" id=3]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=4]
+[ext_resource path="res://AcceptDialog.gd" type="Script" id=5]
+[ext_resource path="res://ConfirmationDialog.gd" type="Script" id=6]
+[ext_resource path="res://ConfirmationDialog2.gd" type="Script" id=7]
+[ext_resource path="res://ConfirmationDialog3.gd" type="Script" id=8]
+[ext_resource path="res://ConfirmationDialog4.gd" type="Script" id=9]
+[ext_resource path="res://AcceptDialog2.gd" type="Script" id=10]
+[ext_resource path="res://NPC1.png" type="Texture" id=11]
+[ext_resource path="res://NPC2.gd" type="Script" id=12]
+[ext_resource path="res://NPC2.png" type="Texture" id=13]
+[ext_resource path="res://ConfirmationDialog5.gd" type="Script" id=14]
+[ext_resource path="res://ConfirmationDialog6.gd" type="Script" id=15]
+[ext_resource path="res://ConfirmationDialog7.gd" type="Script" id=16]
+[ext_resource path="res://ConfirmationDialog8.gd" type="Script" id=17]
+[ext_resource path="res://NPC3.png" type="Texture" id=18]
+[ext_resource path="res://level.gd" type="Script" id=19]
+[ext_resource path="res://sick_message.png" type="Texture" id=20]
+[ext_resource path="res://SickMessage.gd" type="Script" id=21]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 316.335, 26.9048 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16.5214, 41.8336 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 321.992, 22.0347 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 22.1783, 53.1474 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 330.477, 23.4489 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 20.7641, 60.2184 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 355.933, 32.955 )
+
+[node name="Node" type="Node"]
+script = ExtResource( 19 )
+
+[node name="Control" type="Control" parent="."]
+pause_mode = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Map" type="Sprite" parent="Control"]
+position = Vector2( 599.585, 307.32 )
+scale = Vector2( 0.883, 1 )
+texture = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Control"]
+position = Vector2( 4, 74 )
+offset = Vector2( 600, 300 )
+current = true
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Control"]
+script = ExtResource( 4 )
+
+[node name="Character" type="Sprite" parent="Control/KinematicBody2D"]
+position = Vector2( 916.464, 470.594 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+offset = Vector2( 0, -26 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/KinematicBody2D"]
+position = Vector2( 916.464, 458.594 )
+scale = Vector2( 0.5, 0.5 )
+polygon = PoolVector2Array( 5, -25.5, 7, -25.5, 7, -24.5, 8, -24.5, 8, -23.5, 9, -23.5, 9, -22.5, 10, -22.5, 10, -20.5, 11, -20.5, 11, -18.5, 12, -18.5, 12, -12.5, 13, -12.5, 13, 6.5, 14, 6.5, 14, 20.5, 13, 20.5, 13, 21.5, 12, 21.5, 12, 22.5, -2, 22.5, -2, 23.5, -7, 23.5, -7, 22.5, -9, 22.5, -9, 21.5, -11, 21.5, -11, 20.5, -12, 20.5, -12, 19.5, -13, 19.5, -13, 18.5, -14, 18.5, -14, 16.5, -15, 16.5, -15, -3.5, -14, -3.5, -14, -8.5, -13, -8.5, -13, -11.5, -12, -11.5, -12, -12.5, -11, -12.5, -11, -14.5, -10, -14.5, -10, -17.5, -9, -17.5, -9, -19.5, -8, -19.5, -8, -20.5, -7, -20.5, -7, -22.5, -6, -22.5, -6, -23.5, -5, -23.5, -5, -25.5, -4, -25.5, -4, -26.5, 5, -26.5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Control"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Control/StaticBody2D"]
+polygon = PoolVector2Array( 934.5, 476.866, 932.5, 120.866, 964.5, 120.866, 960.5, 482.866 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Control/StaticBody2D"]
+polygon = PoolVector2Array( 266.5, 474.866, 254.5, 128.866, 222.5, 126.866, 228.5, 486.866 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Control/StaticBody2D"]
+polygon = PoolVector2Array( 266.5, 472.866, 936.5, 476.866, 964.5, 492.866, 242.5, 500.866 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Control/StaticBody2D"]
+polygon = PoolVector2Array( 298.5, 436.866, 300.5, 392.866, 930.5, 392.866, 928.5, 438.866 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Control/StaticBody2D"]
+polygon = PoolVector2Array( 258.5, 292.866, 902.5, 294.866, 900.5, 352.866, 262.5, 352.866 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Control/StaticBody2D"]
+polygon = PoolVector2Array( 296.5, 172.866, 296.5, 254.866, 932.5, 254.866, 932.5, 166.866 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Control/StaticBody2D"]
+polygon = PoolVector2Array( 252.5, 120.866, 934.5, 120.866, 944.5, 88.8658, 218.5, 94.8658 )
+
+[node name="NPC1" type="Sprite" parent="Control"]
+position = Vector2( 314, 414 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="NPC2" type="Sprite" parent="Control"]
+position = Vector2( 920, 322 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+script = ExtResource( 12 )
+
+[node name="NPC3" type="Sprite" parent="Control"]
+position = Vector2( 316, 198 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 18 )
+
+[node name="Exit" type="Node2D" parent="Control"]
+position = Vector2( 910, 140 )
+scale = Vector2( 1e-05, 1e-05 )
+
+[node name="SaveFile" type="Node2D" parent="Control"]
+position = Vector2( 504, 150 )
+scale = Vector2( 1e-05, 1e-05 )
+
+[node name="Area2D" type="Area2D" parent="Control"]
+position = Vector2( 617.193, 457.387 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Area2D"]
+shape = SubResource( 1 )
+
+[node name="Area2D2" type="Area2D" parent="Control"]
+position = Vector2( 284.853, 431.931 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Area2D2"]
+shape = SubResource( 2 )
+
+[node name="Area2D3" type="Area2D" parent="Control"]
+position = Vector2( 580.423, 368.291 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Area2D3"]
+shape = SubResource( 3 )
+
+[node name="Area2D4" type="Area2D" parent="Control"]
+position = Vector2( 924.077, 345.664 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Area2D4"]
+shape = SubResource( 4 )
+
+[node name="Area2D5" type="Area2D" parent="Control"]
+position = Vector2( 625.678, 269.297 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Area2D5"]
+shape = SubResource( 5 )
+
+[node name="Area2D6" type="Area2D" parent="Control"]
+position = Vector2( 274.953, 232.527 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Area2D6"]
+shape = SubResource( 6 )
+
+[node name="Area2D7" type="Area2D" parent="Control"]
+position = Vector2( 583.252, 139.189 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Area2D7"]
+shape = SubResource( 7 )
+
+[node name="SickMessage" type="Sprite" parent="Control"]
+position = Vector2( 580, 323 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 20 )
+script = ExtResource( 21 )
+
+[node name="Control2" type="Control" parent="."]
+pause_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Control2"]
+margin_left = 254.0
+margin_top = 127.0
+margin_right = 939.0
+margin_bottom = 493.0
+popup_exclusive = true
+window_title = ""
+dialog_text = "You are sick with a disease!
+
+Use arrow keys to move."
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AcceptDialog2" type="AcceptDialog" parent="Control2"]
+margin_left = 254.0
+margin_top = 127.0
+margin_right = 939.0
+margin_bottom = 493.0
+popup_exclusive = true
+window_title = ""
+dialog_text = "There is someone in the middle of the road!"
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Control2"]
+margin_left = 254.0
+margin_top = 127.0
+margin_right = 939.0
+margin_bottom = 493.0
+popup_exclusive = true
+window_title = ""
+dialog_text = "The person on the corner is saying 'Hello'"
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmationDialog2" type="ConfirmationDialog" parent="Control2"]
+margin_left = 254.0
+margin_top = 127.0
+margin_right = 939.0
+margin_bottom = 493.0
+popup_exclusive = true
+window_title = ""
+dialog_text = "The person on the corner is asking 'How are you?'"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmationDialog3" type="ConfirmationDialog" parent="Control2"]
+margin_left = 254.0
+margin_top = 127.0
+margin_right = 939.0
+margin_bottom = 493.0
+popup_exclusive = true
+window_title = ""
+dialog_text = "The person on the corner is saying 'I am fine. What is troubling your health?'"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmationDialog4" type="ConfirmationDialog" parent="Control2"]
+margin_left = 254.0
+margin_top = 127.0
+margin_right = 939.0
+margin_bottom = 493.0
+popup_exclusive = true
+window_title = ""
+dialog_text = "The person on the corner is saying 'Well, I hope you get better soon! Please take care and goodbye'"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmationDialog5" type="ConfirmationDialog" parent="Control2"]
+margin_left = 254.0
+margin_top = 127.0
+margin_right = 939.0
+margin_bottom = 493.0
+popup_exclusive = true
+window_title = ""
+dialog_text = "The person on the corner is saying 'Hello'"
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmationDialog6" type="ConfirmationDialog" parent="Control2"]
+margin_left = 254.0
+margin_top = 127.0
+margin_right = 939.0
+margin_bottom = 493.0
+popup_exclusive = true
+window_title = ""
+dialog_text = "The person on the corner is asking 'How are you?'"
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmationDialog7" type="ConfirmationDialog" parent="Control2"]
+margin_left = 254.0
+margin_top = 127.0
+margin_right = 939.0
+margin_bottom = 493.0
+popup_exclusive = true
+window_title = ""
+dialog_text = "The person on the corner is saying 'I am fine. What is troubling your health?'"
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmationDialog8" type="ConfirmationDialog" parent="Control2"]
+margin_left = 254.0
+margin_top = 127.0
+margin_right = 939.0
+margin_bottom = 493.0
+popup_exclusive = true
+window_title = ""
+dialog_text = "The person on the corner is saying 'Well, I hope you get better soon! Please take care and goodbye'"
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="about_to_show" from="Control2/AcceptDialog" to="Control" method="_on_AcceptDialog_about_to_show"]
+[connection signal="confirmed" from="Control2/AcceptDialog" to="Control" method="_on_AcceptDialog_confirmed"]
+[connection signal="about_to_show" from="Control2/AcceptDialog2" to="Control" method="_on_AcceptDialog2_about_to_show"]
+[connection signal="confirmed" from="Control2/AcceptDialog2" to="Control" method="_on_AcceptDialog2_confirmed"]
+[connection signal="confirmed" from="Control2/AcceptDialog2" to="Control/SickMessage" method="_on_AcceptDialog2_confirmed"]
+[connection signal="confirmed" from="Control2/AcceptDialog2" to="Control/NPC2" method="_on_AcceptDialog2_confirmed"]
+[connection signal="about_to_show" from="Control2/ConfirmationDialog" to="Control" method="_on_ConfirmationDialog_about_to_show"]
+[connection signal="confirmed" from="Control2/ConfirmationDialog" to="Control" method="_on_ConfirmationDialog_confirmed"]
+[connection signal="confirmed" from="Control2/ConfirmationDialog" to="Control2/ConfirmationDialog2" method="_on_ConfirmationDialog_confirmed"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog" to="Control" method="_on_ConfirmationDialog_popup_hide"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog" to="." method="_on_ConfirmationDialog_popup_hide"]
+[connection signal="about_to_show" from="Control2/ConfirmationDialog2" to="Control" method="_on_ConfirmationDialog2_about_to_show"]
+[connection signal="confirmed" from="Control2/ConfirmationDialog2" to="Control2/ConfirmationDialog3" method="_on_ConfirmationDialog2_confirmed"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog2" to="Control" method="_on_ConfirmationDialog2_popup_hide"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog2" to="." method="_on_ConfirmationDialog2_popup_hide"]
+[connection signal="about_to_show" from="Control2/ConfirmationDialog3" to="Control" method="_on_ConfirmationDialog3_about_to_show"]
+[connection signal="confirmed" from="Control2/ConfirmationDialog3" to="Control2/ConfirmationDialog4" method="_on_ConfirmationDialog3_confirmed"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog3" to="Control" method="_on_ConfirmationDialog3_popup_hide"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog3" to="." method="_on_ConfirmationDialog3_popup_hide"]
+[connection signal="about_to_show" from="Control2/ConfirmationDialog4" to="Control" method="_on_ConfirmationDialog4_about_to_show"]
+[connection signal="confirmed" from="Control2/ConfirmationDialog4" to="." method="_on_ConfirmationDialog4_confirmed"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog4" to="Control" method="_on_ConfirmationDialog4_popup_hide"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog4" to="." method="_on_ConfirmationDialog4_popup_hide"]
+[connection signal="about_to_show" from="Control2/ConfirmationDialog5" to="Control" method="_on_ConfirmationDialog5_about_to_show"]
+[connection signal="confirmed" from="Control2/ConfirmationDialog5" to="Control2/ConfirmationDialog6" method="_on_ConfirmationDialog5_confirmed"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog5" to="Control" method="_on_ConfirmationDialog5_popup_hide"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog5" to="." method="_on_ConfirmationDialog5_popup_hide"]
+[connection signal="about_to_show" from="Control2/ConfirmationDialog6" to="Control" method="_on_ConfirmationDialog6_about_to_show"]
+[connection signal="confirmed" from="Control2/ConfirmationDialog6" to="Control2/ConfirmationDialog7" method="_on_ConfirmationDialog6_confirmed"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog6" to="Control" method="_on_ConfirmationDialog6_popup_hide"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog6" to="." method="_on_ConfirmationDialog6_popup_hide"]
+[connection signal="about_to_show" from="Control2/ConfirmationDialog7" to="Control" method="_on_ConfirmationDialog7_about_to_show"]
+[connection signal="confirmed" from="Control2/ConfirmationDialog7" to="Control2/ConfirmationDialog8" method="_on_ConfirmationDialog7_confirmed"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog7" to="Control" method="_on_ConfirmationDialog7_popup_hide"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog7" to="." method="_on_ConfirmationDialog7_popup_hide"]
+[connection signal="about_to_show" from="Control2/ConfirmationDialog8" to="Control" method="_on_ConfirmationDialog8_about_to_show"]
+[connection signal="confirmed" from="Control2/ConfirmationDialog8" to="." method="_on_ConfirmationDialog8_confirmed"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog8" to="Control" method="_on_ConfirmationDialog8_popup_hide"]
+[connection signal="popup_hide" from="Control2/ConfirmationDialog8" to="." method="_on_ConfirmationDialog8_popup_hide"]
